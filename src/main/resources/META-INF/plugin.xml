@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.jakubjirak.readmediagrams</id>
-    <name>README Diagrams — Mermaid &amp; Structurizr Preview</name>
+    <name>README Diagrams - Mermaid and Structurizr Preview</name>
     <vendor email="support@jakubjirak.com" url="https://jakubjirak.com">Jakub Jirak</vendor>
 
     <description><![CDATA[<h2>Render Mermaid and Structurizr diagrams from your README</h2>
