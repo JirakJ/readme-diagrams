@@ -1,0 +1,62 @@
+<idea-plugin>
+    <id>com.jakubjirak.readmediagrams</id>
+    <name>README Diagrams — Mermaid &amp; Structurizr Preview</name>
+    <vendor email="support@jakubjirak.com" url="https://jakubjirak.com">Jakub Jirak</vendor>
+
+    <description><![CDATA[<h2>Render Mermaid and Structurizr diagrams from your README</h2>
+
+<p>
+Preview <code>```mermaid</code> and <code>```structurizr</code> fenced code blocks from
+Markdown files in a dedicated tool window — offline, with the bundled Mermaid renderer.
+No cloud calls, no external tools.
+</p>
+
+<h3>Features</h3>
+<ul>
+  <li><b>Mermaid</b> — flowcharts, sequence, class, state, ER, gantt, pie, C4, and every other diagram type supported by bundled Mermaid 11</li>
+  <li><b>Structurizr DSL</b> — a practical subset (person, softwareSystem, container, component, relationships, groups) transpiled to Mermaid C4 diagrams; unsupported lines are listed as warnings instead of failing silently</li>
+  <li><b>Live preview</b> — updates as you type (debounced) and when you switch editors</li>
+  <li><b>Theme-aware</b> — dark/light rendering follows the IDE theme</li>
+  <li>Works in any Markdown file (.md, .markdown), not just README</li>
+</ul>
+
+<h3>Usage</h3>
+<ol>
+  <li>Open a Markdown file containing <code>```mermaid</code> or <code>```structurizr</code> blocks</li>
+  <li>Open the <b>README Diagrams</b> tool window (right sidebar), or right-click the editor → <b>Preview README Diagrams</b></li>
+</ol>
+
+<h3>Requirements</h3>
+<ul>
+  <li>Any IntelliJ-based IDE 2023.2+ running on the JetBrains Runtime (JCEF)</li>
+</ul>
+
+<h3>Support</h3>
+<ul>
+  <li>Issues: <a href="https://github.com/JirakJ/readme-diagrams/issues">GitHub Issues</a></li>
+  <li>Contact: support@jakubjirak.com</li>
+</ul>]]></description>
+
+    <change-notes><![CDATA[
+        <h3>2026.1.0 — Initial release</h3>
+        <ul>
+            <li>Mermaid rendering of fenced code blocks via bundled Mermaid 11 (offline)</li>
+            <li>Structurizr DSL subset transpiled to Mermaid C4 with transparent warnings</li>
+            <li>Live, theme-aware preview tool window with debounced updates</li>
+        </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="README Diagrams" anchor="right" icon="AllIcons.FileTypes.Diagram"
+                    factoryClass="com.jakubjirak.readmediagrams.ui.DiagramPreviewToolWindowFactory"/>
+    </extensions>
+
+    <actions>
+        <action id="ReadmeDiagrams.Preview" class="com.jakubjirak.readmediagrams.actions.PreviewDiagramsAction"
+                text="Preview README Diagrams" description="Render Mermaid and Structurizr blocks from this Markdown file">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
