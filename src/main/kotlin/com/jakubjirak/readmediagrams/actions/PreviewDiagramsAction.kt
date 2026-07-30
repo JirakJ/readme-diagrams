@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2026 Jakub Jirák. All rights reserved.
- * Licensed under the terms of the JetBrains Marketplace EULA.
+ * Licensed under the MIT License. See LICENSE in the repository root.
  */
 package com.jakubjirak.readmediagrams.actions
 
